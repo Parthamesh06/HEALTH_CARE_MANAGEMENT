@@ -1,12 +1,12 @@
 # HEALTH_CARE_MANAGEMENT
 The healthcare Management System is a web-based application designed to allow users to manage their healthcare activities online. Developed as a university project, this system utilizes Java Spring Boot for backend services, HTML, CSS, and JavaScript for frontend development, and JDBC with MySQL for database operations.
 
-# Clone the Repository
+Clone the Repository
 
 bash
 Copy code
-git clone https://github.com/Parthamesh06/HEALTH_CARE_MANAGEMENT.git
-cd HEALTH_CARE_MANAGEMENT
+git clone https://github.com/your-username/healthcare-management-system.git
+cd healthcare-management-system
 Configure the Database
 
 Create a new database in MySQL for the Healthcare Management System. Update the application.properties file to configure the database connection.
@@ -14,30 +14,30 @@ Create a new database in MySQL for the Healthcare Management System. Update the 
 properties
 Copy code
 # application.properties
-# Database configuration for MySQL
-spring.datasource.url=jdbc:mysql://localhost:3306/healthcare
-spring.datasource.username=root
-spring.datasource.password=Pratham@8969
-
-
+spring.datasource.url=jdbc:mysql://localhost:3306/healthcare_db
+spring.datasource.username=your_mysql_username
+spring.datasource.password=your_mysql_password
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.jpa.hibernate.ddl-auto=update
-spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
-
-# Show SQL in logs (optional)
 spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+Replace healthcare_db, your_mysql_username, and your_mysql_password with your actual database name, MySQL username, and password.
 
-# Build the Project
+Build the Project
 
 Use Maven to install dependencies and build the project:
 
+bash
+Copy code
 mvn clean install
-
-# Run the Application
+Run the Application
 
 Run the application using Maven:
-mvn spring-boot:run
 
-# Access the Application
+bash
+Copy code
+mvn spring-boot:run
+Access the Application
 
 Open your browser and go to http://localhost:8080 to access the Online Healthcare Management System.
 
@@ -156,5 +156,5 @@ Copy code
     </div>
 </body>
 </html>
-# Testing
+Testing
 Unit and integration tests are located in the src/test/ directory to ensure each functionality works correctly.
