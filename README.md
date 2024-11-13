@@ -9,7 +9,7 @@ The Healthcare Management System offers separate functionalities for Admin, Doct
 
 
 
-### Usage and Functionalities
+### USAGE AND FUNCTIONALITIES
 
 ## User Functionalities
 
@@ -124,8 +124,84 @@ healthcare-management-system/
 ## JDBC Implementation Notes
 
 - **Database Connection**: Uses Spring's `JdbcTemplate` to connect to MySQL.
-- **SQL Queries**: SQL queries are used to insert, update, and retrieve data.
-- **Transaction Management**: Ensures data consistency, especially for fund transfers, with transaction handling via Spring.
+- **SQL Queries**: SQL queries will be used within repository interfaces for CRUD operations. Here’s an example of how to manage appointments with Spring Data JPA.
+
+```
+java
+@Repository
+public interface AppointmentRepository extends JpaRepository<Appointment, Long> {
+    List<Appointment> findByDoctorId(Long doctorId);
+    List<Appointment> findByPatientId(Long patientId);
+}
+```
+- **Transaction Management**: For critical operations, such as booking and managing appointments, Spring’s transaction management will ensure data consistency:
+
+```
+java
+@Service
+public class AppointmentService {
+    
+    @Autowired
+    private AppointmentRepository appointmentRepository;
+
+    @Transactional
+    public Appointment bookAppointment(Appointment appointment) {
+        // Logic to handle appointment booking
+        return appointmentRepository.save(appointment);
+    }
+}
+```
+
+
+### Frontend: HTML and CSS
+Each user type (Admin, Doctor, and Patient) will have separate HTML templates under `src/main/resources/templates/` with corresponding styling in `src/main/resources/static/`.
+
+
+```
+css
+
+src/main/resources/
+├── templates/
+│   ├── admin/
+│   │   ├── dashboard.html
+│   │   ├── user_management.html
+│   └── patient/
+│       ├── dashboard.html
+│       ├── appointment_booking.html
+│       └── medical_history.html
+└── static/
+    ├── css/
+    │   └── styles.css
+    ├── js/
+    │   └── scripts.js
+    └── images/
+```
+    
+## Admin Dashboard (dashboard.html)
+
+Displays a summary of users, appointments, and system settings.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Welcome to Admin Dashboard</h1>
+    <div class="dashboard-section">
+        <h2>Manage Users</h2>
+        <!-- User management table -->
+    </div>
+    <div class="dashboard-section">
+        <h2>Appointments</h2>
+        <!-- Appointment management table -->
+    </div>
+</body>
+</html>
+```
 
 ## Testing
 Unit and integration tests are located in the src/test/ directory to ensure each functionality works correctly.
