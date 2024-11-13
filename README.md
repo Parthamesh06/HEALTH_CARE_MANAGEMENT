@@ -56,7 +56,7 @@ git clone https://github.com/Parthamesh06/HEALTH_CARE_MANAGEMENT.git
 cd HEALTH_CARE_MANAGEMENT
 ```
 
-### 2. Configure the Database [In Progress]
+### 2. Configure the Database 
 
 Create a new database in MySQL, then update your `application.properties` file to configure the database connection.
 
