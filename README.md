@@ -13,19 +13,27 @@ The Healthcare Management System offers separate functionalities for Admin, Doct
 
 ## User Functionalities
 -**Register**: New users (patients) can create accounts.
+
 -**Login**: Access account details and manage profile information.
+
 -**Book Appointment**: Patients can book appointments with doctors for specific dates and times.
+
 -**View Medical History**: Patients can view their previous consultations and medical records.
 
 ## Doctor Functionalities
 -**Schedule Management**: Doctors can manage their availability and appointments.
+
 -**Patient Records**: View and update medical records of patients.
+
 -**Appointment Management**: Confirm and manage appointments with patients.
 
 ## Admin Functionalities
 -**User Management**: Admin can manage user accounts for patients and doctors, including adding, editing, and deleting accounts.
+
 -**Appointment Oversight**: Admin can view and manage all system appointments.
+
 -**System Settings**: Configure system settings as needed, including roles and permissions.
+
 - **Security Features**: Data protection via encryption and access control.
 
 ## Technology Stack
