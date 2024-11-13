@@ -3,15 +3,16 @@ The healthcare Management System is a web-based application designed to allow us
 
 # Clone the Repository
 
-
+bash
+Copy code
 git clone https://github.com/Parthamesh06/HEALTH_CARE_MANAGEMENT.git
 cd HEALTH_CARE_MANAGEMENT
-
-# Configure the Database
+Configure the Database
 
 Create a new database in MySQL for the Healthcare Management System. Update the application.properties file to configure the database connection.
 
-
+properties
+Copy code
 # application.properties
 # Database configuration for MySQL
 spring.datasource.url=jdbc:mysql://localhost:3306/healthcare
